@@ -62,34 +62,27 @@ if (function_exists('register_sidebar')) {
     );
 }
 
-function epal_wp_corenavi($custom_query = null, $paged = null)
+function devvn_wp_corenavi($custom_query = null, $paged = null)
 {
     global $wp_query;
-    if ($custom_query)
-        $main_query = $custom_query;
-    else
-        $main_query = $wp_query;
+    if ($custom_query) $main_query = $custom_query;
+    else $main_query = $wp_query;
     $paged = ($paged) ? $paged : get_query_var('paged');
     $big = 999999999;
     $total = isset($main_query->max_num_pages) ? $main_query->max_num_pages : '';
-    if ($total > 1)
-        echo '<div class="pagenavi">';
-    echo paginate_links(
-        array(
-            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-            'format' => '?paged=%#%',
-            'current' => max(1, $paged),
-            'total' => $total,
-            'mid_size' => '1',
-            // Số trang hiển thị khi có nhiều trang trước khi hiển thị ...
-            'prev_text' => __('<i class="fa fa-angle-left"></i> <span>Trang trước</span>', ''),
-            'next_text' => __('<span>Trang sau</span><i class="fa fa-angle-right"></i>', ''),
-            'before_page_number' => '<span class="page-number">' . add_leading_zero('') . '</span>',
-        )
-    );
-    if ($total > 1)
-        echo '</div>';
+    if ($total > 1) echo '<div class="pagenavi">';
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+        'format' => '?paged=%#%',
+        'current' => max(1, $paged),
+        'total' => $total,
+        'mid_size' => '1', // Số trang hiển thị khi có nhiều trang trước khi hiển thị ...
+        'prev_text' => __('<i class="fa fa-angle-left"></i>', 'devvn'),
+        'next_text' => __('<i class="fa fa-angle-right"></i>', 'devvn'),
+    ));
+    if ($total > 1) echo '</div>';
 }
+
 function add_leading_zero($str)
 {
     return str_pad($str, 1, '0', STR_PAD_LEFT);

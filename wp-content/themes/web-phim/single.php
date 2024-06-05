@@ -82,8 +82,11 @@ get_template_part('sections/menu-main');
                     }
                     ?>
                   </div>
-                  <div class="storyline">
-                    <?php the_content(); ?>
+                  <div class="story-content">
+                    <div class="storyline">
+                      <?php the_content(); ?>
+                    </div>
+                    <button id="single-button"><span>Xem thêm</span><img src="<?php echo get_template_directory_uri() ?>/images/chevron-double-down.svg" alt=""></button>
                   </div>
                 </div>
               </div>

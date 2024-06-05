@@ -1,31 +1,29 @@
 * {
-    list-style: none;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: Mulish_Regular, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Mulish_Regular, sans-serif;
 }
-
-
 
 //import font chữ
 @font-face {
-    font-family: "Mulish_Light";
-    src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Light.ttf);
+  font-family: "Mulish_Light";
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Light.ttf);
 }
 
 @font-face {
-    font-family: "Mulish_Regular";
-    src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Regular.ttf);
+  font-family: "Mulish_Regular";
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Mulish_Medium";
-    src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Medium.ttf);
+  font-family: "Mulish_Medium";
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Medium.ttf);
 }
 
 @font-face {
-    font-family: "Mulish_Bold";
-    src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Bold.ttf);
+  font-family: "Mulish_Bold";
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Bold.ttf);
 }
 
 @import "home/slider";
@@ -33,3 +31,4 @@
 @import "reponsive";
 @import "header";
 @import "home/single";
+@import "component/category";
