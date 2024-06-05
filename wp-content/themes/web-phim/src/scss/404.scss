@@ -1,0 +1,26 @@
+#error{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    .error_title{
+        text-align: center;
+
+        img{
+            margin: auto;
+        }
+        p{
+            font-size: 18px;
+            font-family: Mulish_Regular, sans-serif;
+            font-weight: 500;
+            color: #ffffff;
+        }
+    }
+    .error_bottom{
+        text-align: center;
+        a{
+            font-size: 18px;
+            font-family: Mulish_Regular, sans-serif;
+            font-weight: 500;
+            color: #51d9a7; 
+        }
+    }
+}

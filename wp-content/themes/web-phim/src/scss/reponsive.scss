@@ -1,0 +1,62 @@
+@media (max-width: 992px) {
+  .header {
+    &.active {
+      padding-block: 10px !important;
+    }
+
+    .active-mobile {
+      transform: translateX(0);
+    }
+  }
+
+  .upcoming {
+    .movies-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .upcoming {
+    .movies-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .upcoming {
+    .movies-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .movies-list-home {
+    .slick-arrow {
+      &.slick-prev {
+        bottom: 55.5%;
+        right: 0px;
+      }
+      &.slick-next {
+        top: 36%;
+        left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .single-box {
+    padding-top: 100px !important;
+  }
+
+  .single-box {
+    .single-movie {
+      .sidebar {
+        a {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
