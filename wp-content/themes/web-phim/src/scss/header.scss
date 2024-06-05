@@ -1,0 +1,32 @@
+.header,
+.footer {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    .logo-main {
+      max-width: 50px;
+      width: 100%;
+      max-height: 40px;
+      object-fit: cover;
+    }
+    .hero-subtitle {
+      margin-bottom: 0;
+      color: #ffffff;
+    }
+  }
+}
+
+.box-footer {
+  span {
+    color: white;
+    margin: auto;
+    max-width: 300px;
+    text-align: justify;
+    margin-top: 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,17 @@
+.idea
+.idea/*
+wp-content/uploads
+wp-content/themes/web-phim/node_modules
+wp-content/themes/web-phim/package.json
+wp-content/themes/web-phim/mix-manifest.json
+wp-content/themes/web-phim/package-lock.json
+wp-content/cache
+.htaccess
+wp-config.php
+.vscode/
+wp-content/themes/twentytwentyone
+wp-content/themes/twentytwentytwo
+wp-content/themes/twentytwentythree
+wp-content/plugins/duplicate-post
+.DS_Store
+
