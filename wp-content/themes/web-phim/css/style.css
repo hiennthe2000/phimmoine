@@ -1125,11 +1125,7 @@ body.active {
 }
 
 
-.storyline{
-    max-height: 200px;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
+
 
 .details-actions {
     display: flex;

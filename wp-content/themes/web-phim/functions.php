@@ -100,3 +100,5 @@ function tao_taxonomy_quoc_gia() {
 }
 
 add_action( 'init', 'tao_taxonomy_quoc_gia', 5 ); 
+
+

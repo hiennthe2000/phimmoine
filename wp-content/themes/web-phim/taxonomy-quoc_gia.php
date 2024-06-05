@@ -1,6 +1,8 @@
 <?php
 get_header();
 get_template_part('sections/menu-main');
+
+
 $id = get_queried_object_id();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $list = new WP_Query([
@@ -10,13 +12,12 @@ $list = new WP_Query([
     'tax_query' => array(
         'relation' => 'AND',
         array(
-            'taxonomy' => 'post_tag', // Change 'taxonomy' to 'category'
+            'taxonomy' => 'quoc_gia',
             'field' => 'id',
             'terms' => $id,
         )),
 ]);
  ?>
-?>
 <section class="upcoming">
     <div class="container">
         <div class="flex-wrapper">
@@ -29,7 +30,7 @@ $list = new WP_Query([
             if (have_posts()):
                 ?>
                 <?php
-                 while ($list->have_posts()) : $list->the_post();
+                while ($list->have_posts()) : $list->the_post();
                     ?>
                     <li>
                         <div class="movie-card">
@@ -66,6 +67,7 @@ $list = new WP_Query([
                         </div>
                     </li>
                 <?php endwhile; ?>
+              
                 <?php
             else:
                 ?>

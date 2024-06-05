@@ -3,7 +3,21 @@ get_header();
 get_template_part('sections/menu-main');
 
 
-?>
+$id = get_queried_object_id();
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$list = new WP_Query([
+    'post_type' => 'post',
+    'posts_per_page' => 20,
+    'paged' => $paged,
+    'tax_query' => array(
+        'relation' => 'AND',
+        array(
+            'taxonomy' => 'category', // Change 'taxonomy' to 'category'
+            'field' => 'id',
+            'terms' => $id,
+        )),
+]);
+ ?>
 <section class="upcoming">
     <div class="container">
         <div class="flex-wrapper">
@@ -16,8 +30,7 @@ get_template_part('sections/menu-main');
             if (have_posts()):
                 ?>
                 <?php
-                while (have_posts()):
-                    the_post();
+                while ($list->have_posts()) : $list->the_post();
                     ?>
                     <li>
                         <div class="movie-card">
@@ -54,6 +67,7 @@ get_template_part('sections/menu-main');
                         </div>
                     </li>
                 <?php endwhile; ?>
+              
                 <?php
             else:
                 ?>
@@ -62,6 +76,7 @@ get_template_part('sections/menu-main');
             endif;
             ?>
         </ul>
+        <?php devvn_wp_corenavi($list, $paged); ?>
     </div>
 </section>
 <?php
