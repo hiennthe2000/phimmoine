@@ -20,6 +20,7 @@ $list = new WP_Query([
  ?>
 <section class="upcoming">
     <div class="container">
+    
         <div class="flex-wrapper">
             <div class="title-wrapper">
                 <h2 class="h2 section-title mt-5"><?php single_cat_title(); ?></h2>
@@ -61,7 +62,7 @@ $list = new WP_Query([
                                 <div class="duration">
                                     <ion-icon name="time-outline"></ion-icon>
                                     <?php $time_movie = get_post_meta(get_the_ID(), 'time_movie', true); ?>
-                                    <time datetime="PT137M"><?= $time_movie ?> phút</time>
+                                    <time datetime="PT137M"><?= $time_movie ?></time>
                                 </div>
                             </div>
                         </div>

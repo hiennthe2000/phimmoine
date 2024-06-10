@@ -15,11 +15,11 @@
 }
 @font-face {
   font-family: "Mulish_Medium";
-  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Medium.ttf);
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/00052-UTM-Cafeta.ttf);
 }
 @font-face {
   font-family: "Mulish_Bold";
-  src: url(/wp-content/themes/web-phim/fonts/Mulish/Mulish-Bold.ttf);
+  src: url(/wp-content/themes/web-phim/fonts/Mulish/00052-UTM-Cafeta.ttf);
 }
 header.active {
   padding-block: 20px !important;
@@ -41,14 +41,16 @@ header .active-over {
   transition: all 0.3s ease;
 }
 header .menu-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 320px;
   background: #111;
   height: 100vh;
   left: 0;
   z-index: 1000;
-  padding: 25px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 25px 25px 44px 25px;
   transform: translateX(-100%);
   transition: all 0.4s ease;
   box-shadow: 0.3px 0 4px #fff;
@@ -95,10 +97,6 @@ header .menu-mobile .menu-menu-main-container #menu-menu-main-1 .menu-item-has-c
   right: 180px;
   width: 20px;
 }
-header .menu-mobile .menu-menu-main-container #menu-menu-main-1 .menu-item-has-children a {
-  pointer-events: none;
-  cursor: default;
-}
 header .menu-open-btn {
   padding-left: 20px;
 }
@@ -136,21 +134,31 @@ header .header-actions .search .search-form button i {
   position: relative;
 }
 .movies-list-home li {
-  margin: 13px;
+  margin: 8px;
 }
 .movies-list-home .slick-arrow {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 40px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
 }
-.movies-list-home .slick-arrow.slick-next {
+.movies-list-home .slick-arrow img {
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50%;
+}
+.movies-list-home .slick-arrow.arrow-back {
   z-index: 1;
   top: 45%;
-  left: -25px;
+  left: 6px;
 }
-.movies-list-home .slick-arrow.slick-prev {
-  bottom: 48%;
-  right: -25px;
+.movies-list-home .slick-arrow.arrow-next {
+  bottom: 45%;
+  right: 4px;
 }
 
 .menu-menu-main-container #menu-menu-main {
@@ -340,10 +348,80 @@ header .header-actions .search .search-form button i {
   line-height: 1.5;
 }
 
+body.tax-quoc_gia .upcoming,
 body.search .upcoming,
 body.category .upcoming,
-body.tag .upcoming {
+body.tag .upcoming,
+body.page-template-tpl-new .upcoming {
   padding-top: 80px;
+}
+
+body.disable-sroll {
+  overflow: hidden;
+}
+
+#main {
+  padding-top: 100px;
+}
+#main .upcoming .movies-list-new .col-lg-3 {
+  padding: 6px;
+}
+#main .upcoming .sidebar-home {
+  margin-top: 65px;
+}
+#main .upcoming .sidebar-home .main-sidebar {
+  padding: 0 10px 15px 10px;
+}
+#main .upcoming .sidebar-home h2.mb-4 {
+  font-size: 24px;
+  color: #fff;
+}
+#main .upcoming .sidebar-home a {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+#main .upcoming .sidebar-home a:last-child {
+  border: none;
+  padding: 0;
+}
+#main .upcoming .sidebar-home .item-sidebar {
+  display: flex;
+  align-items: center;
+}
+#main .upcoming .sidebar-home .item-sidebar .image {
+  padding: 0;
+}
+#main .upcoming .sidebar-home .item-sidebar .image img {
+  width: 50px;
+  margin: auto;
+  height: 60%;
+}
+#main .upcoming .sidebar-home .item-sidebar .content {
+  padding: 0 10px;
+}
+#main .upcoming .sidebar-home .item-sidebar .content .date {
+  font-size: 12px;
+  color: #696969;
+  margin-bottom: 7px;
+}
+#main .upcoming .sidebar-home .item-sidebar .content .title {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: var(--transition-1);
+}
+#main .upcoming .sidebar-home .item-sidebar .content .meta-wrapper {
+  margin: 0;
+}
+#main .upcoming .sidebar-home .item-sidebar .content .meta-wrapper .date-time time {
+  font-size: 12px;
+}
+
+.bg-movie {
+  background: hsl(207, 19%, 11%);
+  padding: 10px 10px 0 10px;
+  border-radius: 4px;
 }
 
 #error {
@@ -376,16 +454,46 @@ body.tag .upcoming {
   .header.active {
     padding-block: 10px !important;
   }
+  .header .menu-mobile .header-actions {
+    display: flex;
+  }
+  .header .menu-mobile .header-actions .search .search-form button i {
+    color: #fff;
+  }
   .header .active-mobile {
     transform: translateX(0);
   }
-  .upcoming .movies-list {
+  #main .upcoming h2.section-title {
+    margin-bottom: 0;
+  }
+  #main .upcoming article.sidebar-home {
+    margin-top: 20px;
+  }
+  #main .upcoming .movies-list {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .footer .footer-top {
+    padding-block: 40px 40px;
   }
 }
 @media (max-width: 768px) {
   .upcoming .movies-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .single-box .container {
+    max-width: unset;
+    padding: 0;
+  }
+  .single-box .container .single-movie .movie-detail-banner {
+    margin-bottom: 25px;
+  }
+  .single-box .container .single-movie .sidebar-home .flex-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .single-box .container .tv-series {
+    padding: 0 15px;
+    margin-top: 0;
   }
 }
 @media (max-width: 550px) {
@@ -402,8 +510,21 @@ body.tag .upcoming {
   }
 }
 @media (max-width: 480px) {
+  p.detail-subtitle {
+    font-size: 16px;
+  }
+  body.tax-quoc_gia .upcoming,
+  body.search .upcoming,
+  body.category .upcoming,
+  body.tag .upcoming,
+  body.page-template-tpl-new .upcoming {
+    padding-top: 50px;
+  }
   .single-box {
-    padding-top: 100px !important;
+    padding-top: 70px !important;
+  }
+  .single-box .movie-detail {
+    padding-bottom: 50px;
   }
   .single-box .single-movie .sidebar a {
     margin-top: 15px;
@@ -441,11 +562,62 @@ body.tag .upcoming {
 }
 
 .single-box {
-  padding-top: 150px;
+  padding-top: 110px;
 }
 .single-box .single-movie {
   padding: 20px 5px;
-  background: #111;
+  margin: 0;
+}
+.single-box .single-movie .sidebar-home {
+  margin-top: 5px;
+}
+.single-box .single-movie .sidebar-home .main-sidebar {
+  padding: 0 10px 15px 10px;
+}
+.single-box .single-movie .sidebar-home h2.mb-4 {
+  font-size: 24px;
+  color: #fff;
+}
+.single-box .single-movie .sidebar-home a {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.single-box .single-movie .sidebar-home a:last-child {
+  border: none;
+  padding: 0;
+}
+.single-box .single-movie .sidebar-home .item-sidebar {
+  display: flex;
+  align-items: center;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .image {
+  padding: 0;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .image img {
+  width: 50px;
+  margin: auto;
+  height: 60%;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .content {
+  padding: 0 10px;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .content .date {
+  font-size: 12px;
+  color: #696969;
+  margin-bottom: 7px;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .content .title {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: var(--transition-1);
+}
+.single-box .single-movie .sidebar-home .item-sidebar .content .meta-wrapper {
+  margin: 0;
+}
+.single-box .single-movie .sidebar-home .item-sidebar .content .meta-wrapper .date-time time {
+  font-size: 12px;
 }
 .single-box .single-movie .movie-detail .movie-detail-banner iframe {
   width: 100%;
@@ -577,13 +749,15 @@ body.tag .upcoming {
   line-height: 1.5;
 }
 
-.archive .upcoming .pagenavi {
+.archive .upcoming .pagenavi,
+.page-template-tpl-new .upcoming .pagenavi {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
-.archive .upcoming .pagenavi .page-numbers {
+.archive .upcoming .pagenavi .page-numbers,
+.page-template-tpl-new .upcoming .pagenavi .page-numbers {
   font-size: 16px;
   color: #ffffff;
   font-weight: 500;
@@ -591,12 +765,14 @@ body.tag .upcoming {
   padding: 0 7px;
   border-radius: 4px;
 }
-.archive .upcoming .pagenavi .page-numbers:hover {
+.archive .upcoming .pagenavi .page-numbers:hover,
+.page-template-tpl-new .upcoming .pagenavi .page-numbers:hover {
   transition: all 0.3s ease;
   border: 1px solid #f2ff07;
   color: #f2ff07;
 }
-.archive .upcoming .pagenavi .page-numbers.current {
+.archive .upcoming .pagenavi .page-numbers.current,
+.page-template-tpl-new .upcoming .pagenavi .page-numbers.current {
   border: 1.5px solid #f2ff07;
   color: #f2ff07;
 }

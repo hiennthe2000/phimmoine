@@ -61,7 +61,7 @@ $list = new WP_Query([
                                 <div class="duration">
                                     <ion-icon name="time-outline"></ion-icon>
                                     <?php $time_movie = get_post_meta(get_the_ID(), 'time_movie', true); ?>
-                                    <time datetime="PT137M"><?= $time_movie ?> phút</time>
+                                    <time datetime="PT137M"><?= $time_movie ?></time>
                                 </div>
                             </div>
                         </div>

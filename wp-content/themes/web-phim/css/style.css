@@ -136,7 +136,7 @@ html {
 }
 
 body {
-    background: var(--eerie-black);
+    background-image: url("../images/body_bg.gif");
     font-family: Mulish-Re !important;
 }
 
@@ -164,8 +164,13 @@ body.active {
 .h1,
 .h2,
 .h3 {
-    color: var(--white);
+    color: #dacb46;
+    text-shadow: 1px 1px 1px #1a1a1a;
+    display: inline-block;
+    text-transform: uppercase;
     line-height: 1.2;
+    font-weight: 700;
+ font-family: Mulish_Medium;
 }
 
 .h1 {
@@ -308,7 +313,7 @@ body.active {
 
 .movies-list {
     display: grid;
-    gap: 50px;
+    gap: 30px;
 }
 
 .movie-card {
@@ -316,15 +321,16 @@ body.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: hsl(207, 19%, 11%);
+    padding: 2px;
 }
 
 .movie-card .card-banner {
     position: relative;
     background: var(--gunmetal-1);
     aspect-ratio: 2 / 3;
-    border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     transition: var(--transition-1);
 }
 
@@ -354,22 +360,26 @@ body.active {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-bottom: 10px;
+    padding: 0 5px;
+    /* margin-bottom: 10px; */
 }
 
 .movie-card .card-title {
-    color: var(--white);
-    font-size: var(--fs-7);
+    color: #44e2ff;
+    font-size: 13px;
+    line-height: 150%;
     transition: var(--transition-1);
     overflow: hidden;
     -webkit-line-clamp: 1;
     display: -webkit-box;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
+    text-transform: uppercase;
 }
 
 .movie-card .card-title:is(:hover, :focus) {
     color: var(--citrine);
+    transition: all 0.3s ease;
 }
 
 .movie-card .title-wrapper time {
@@ -383,6 +393,8 @@ body.active {
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
+    margin-bottom: 10px;
+    padding: 0 5px;
 }
 
 .movie-card .badge {
@@ -434,10 +446,6 @@ body.active {
         inset 0 -1px 0 var(--black);
 }
 
-
-
-
-
 /*-----------------------------------*\
  * #HEADER
 \*-----------------------------------*/
@@ -447,9 +455,12 @@ body.active {
     top: 0;
     left: 0;
     width: 100%;
-    padding-block: 25px;
+    padding-block: 18px;
     transition: var(--transition-2);
     z-index: 4;
+    box-shadow: 0 4px 4px -2px rgba(46, 48, 43, 0.4);
+    background: #33333396;
+   
 }
 
 .header.active {
@@ -629,12 +640,14 @@ body.active {
 }
 
 .upcoming .flex-wrapper {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .upcoming .section-title {
     margin-bottom: 30px;
-    margin-top: 50px;
+    font-size: 22px;
+    
 }
 
 .filter-list {
@@ -848,14 +861,16 @@ body.active {
 \*-----------------------------------*/
 
 .tv-series {
-    background: url("../images/tv-series-bg.jpg") no-repeat;
+    /* background: url("../images/tv-series-bg.jpg") no-repeat; */
     background-size: cover;
     background-position: center;
-    padding-block: var(--section-padding);
+    /* padding-block: var(--section-padding); */
+    margin-top: 20px;
 }
 
 .tv-series .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
 }
 
 
@@ -877,7 +892,16 @@ body.active {
 .cta .title-wrapper {
     margin-bottom: 25px;
 }
+.flex-wrapper .title-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
+.flex-wrapper .title-wrapper a{
+   color: hsl(57, 97%, 45%);
+}
 .cta-title {
     color: var(--eerie-black);
     font-size: var(--fs-3);
@@ -1203,7 +1227,7 @@ body.active {
     /* MOVIE CARD */
     .movies-list {
         grid-template-columns: 1fr 1fr;
-        gap: 60px 30px;
+        gap: 20px;
     }
    
 }
@@ -1253,7 +1277,7 @@ body.active {
 
     .movies-list {
         grid-template-columns: 1fr 1fr;
-        gap: 60px 30px;
+        gap: 20px;
     }
     /**
    * UPCOMING
@@ -1477,7 +1501,11 @@ body.active {
 }
 
 
-
+@media (min-width: 768px) {
+    .upcoming .movies-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 
 /**
@@ -1496,6 +1524,7 @@ body.active {
 
     .header.active {
         padding-block: 5px;
+        border: none;
     }
 
     .menu-open-btn,
