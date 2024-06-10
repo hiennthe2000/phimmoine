@@ -3,15 +3,42 @@
     &.active {
       padding-block: 10px !important;
     }
-
+    .menu-mobile {
+      .header-actions {
+        display: flex;
+        .search {
+          .search-form {
+            button {
+              i {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
     .active-mobile {
       transform: translateX(0);
     }
   }
 
-  .upcoming {
-    .movies-list {
-      grid-template-columns: repeat(4, 1fr);
+  #main {
+    .upcoming {
+      h2.section-title {
+        margin-bottom: 0;
+      }
+
+      article.sidebar-home {
+        margin-top: 20px;
+      }
+      .movies-list {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+  .footer {
+    .footer-top {
+      padding-block: 40px 40px;
     }
   }
 }
@@ -20,6 +47,28 @@
   .upcoming {
     .movies-list {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .single-box {
+    .container {
+      max-width: unset;
+      padding: 0;
+
+      .single-movie {
+        .movie-detail-banner {
+          margin-bottom: 25px;
+        }
+        .sidebar-home {
+          .flex-wrapper {
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .tv-series {
+        padding: 0 15px;
+        margin-top: 0;
+      }
     }
   }
 }
@@ -46,8 +95,23 @@
 }
 
 @media (max-width: 480px) {
+  p.detail-subtitle {
+    font-size: 16px;
+  }
+  body.tax-quoc_gia,
+  body.search,
+  body.category,
+  body.tag,
+  body.page-template-tpl-new {
+    .upcoming {
+      padding-top: 50px;
+    }
+  }
   .single-box {
-    padding-top: 100px !important;
+    padding-top: 70px !important;
+    .movie-detail {
+      padding-bottom: 50px;
+    }
   }
 
   .single-box {

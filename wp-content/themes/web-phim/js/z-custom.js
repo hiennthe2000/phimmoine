@@ -1,17 +1,18 @@
 $(document).ready(function () {
-    $(".header .menu-open-btn").click(function () {
-        $(".header .menu-mobile").addClass("active-mobile");
-    });
     $(".header .menu-mobile .close .bt-close").click(function () {
         $(".header .menu-mobile").removeClass("active-mobile");
         $(".header .overlays").removeClass("active-over");
+        $("body").removeClass("disable-sroll");
     });
     $(".header .menu-open-btn").click(function () {
         $(".header .overlays").addClass("active-over");
+        $(".header .menu-mobile").addClass("active-mobile");
+        $("body").addClass("disable-sroll");
     });
     $(".header .overlays").click(function () {
         $(".header .overlays").removeClass("active-over");
         $(".header .menu-mobile").removeClass("active-mobile");
+        $("body").removeClass("disable-sroll");
     });
 
     $(window).scroll(function () {
@@ -32,7 +33,6 @@ $(document).ready(function () {
         dots: false
     });
     var list_item = $('.movies-list-home li').length;
-    console.log(list_item);
 
     $('.movies-list-home').slick({
         infinite: true,
@@ -40,10 +40,11 @@ $(document).ready(function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
+        margin: 0,
         arrows: true,
         dots: false,
-        prevArrow: "<img class='a-right control-c next slick-next' src='/wp-content/themes/web-phim/images/angle-circle-prev.svg'>",
-        nextArrow: "<img class='a-left control-c prev slick-prev' src='/wp-content/themes/web-phim/images/angle-circle-next.svg'>",
+        prevArrow: "<div class='arrow-back'><img class='a-right control-c next slick-next' src='/wp-content/themes/web-phim/images/back-button.svg'></div>",
+        nextArrow: "<div class='arrow-next'><img class='a-left control-c prev slick-prev' src='/wp-content/themes/web-phim/images/next-button.svg'></div>",
         responsive: [
             {
                 breakpoint: 1024,
@@ -95,9 +96,15 @@ $(document).ready(function () {
         });
     }
 
-    //ẩn hiện nội dung trang chủ
+    //ẩn hiện nội dung trang chi tiết
     var contentSingle = $(".story-content .storyline");
+    var heightContent = contentSingle.height();
+    console.log(heightContent);
     var SingleButton = $("#single-button span");
+
+    if (heightContent < 200) {
+        $('.story-content #single-button').hide();
+    }
 
     if (contentSingle.length && SingleButton.length) {
         if (contentSingle[0].scrollHeight > 200) {

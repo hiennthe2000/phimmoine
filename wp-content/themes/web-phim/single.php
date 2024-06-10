@@ -9,7 +9,7 @@ get_template_part('sections/menu-main');
       <div class="container">
         <main class="row single-movie">
           <article class="col-md-8">
-            <section class="movie-detail">
+            <section class="movie-detail bg-movie">
               <div class="row">
                 <figure class="movie-detail-banner col-12">
                   <div class="progress-bar"></div>
@@ -92,25 +92,33 @@ get_template_part('sections/menu-main');
               </div>
             </section>
           </article>
-          <article class="col-md-4 sidebar">
-            <h2 class="mb-4">Phim nổi bật</h2>
-            <?php if (have_rows('movie_future', 'option')): ?>
-              <?php while (have_rows('movie_future', 'option')):
+          <article class="sidebar-home col-md-4">
+                <div class="flex-wrapper">
+                    <div class="title-wrapper">
+                        <h2 class="h2 section-title">Phim nổi bật</h2>
+                    </div>
+                </div>
+                <div class="main-sidebar bg-movie p-3">
+                <?php if (have_rows('movie_future', 'option')): ?>
+                  <?php while (have_rows('movie_future', 'option')):
                 the_row();
                 $post_movie = get_sub_field('chosee_post');
+               
+                $post_date_gmt = get_the_date('d/m/Y', $post_movie);
                 $post_movie_title = get_the_title($post_movie);
                 $post_movie_link = get_permalink($post_movie);
                 $additional_text = get_post_meta($post_movie->ID, 'hd_moive', true);
                 $additional_time = get_post_meta($post_movie->ID, 'time_movie', true);
                 ?>
                 <a href="<?= $post_movie_link ?>">
-                  <div class="row">
-                    <div class="col-3 image">
+                  <div class="row item-sidebar">
+                    <div class="col-2 image">
                       <img src="<?php echo get_the_post_thumbnail_url($post_movie); ?>" class="img-fluid post-image"
                         alt="Ảnh bài viết">
                     </div>
-                    <div class="col-9 content">
+                    <div class="col-10 content">
                       <h2 class="title"><?php echo $post_movie_title ?></h2>
+                      <p class="date">Cập nhật: <?= $post_date_gmt ?></p>
                       <div class="meta-wrapper">
                         <div class="badge-wrapper">
                           <div class="badge badge-outline"><?= $additional_text ?></div>
@@ -128,13 +136,12 @@ get_template_part('sections/menu-main');
                 </a>
               <?php endwhile; ?>
             <?php endif; ?>
-          </article>
+            </div>
+                </article>
         </main>
         <section class="tv-series">
-          <div class="container">
             <h2 class="h2 section-title">Liên quan</h2>
-
-            <ul class="movies-list-home">
+            <ul class="movies-list-home bg-movie">
               <?php
               $current_post_id = get_the_ID();
               $current_post_category = get_the_category($current_post_id);
@@ -188,12 +195,10 @@ get_template_part('sections/menu-main');
               ?>
             </ul>
 
-          </div>
         </section>
 
       </div>
     </div>
-
   <?php endwhile; endif; ?>
 <?php
 get_footer();
