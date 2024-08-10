@@ -424,6 +424,55 @@ body.disable-sroll {
   border-radius: 4px;
 }
 
+.sidebar-home .main-sidebar {
+  padding: 0 10px 15px 10px;
+}
+.sidebar-home h2.mb-4 {
+  font-size: 24px;
+  color: #fff;
+}
+.sidebar-home a {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.sidebar-home a:last-child {
+  border: none;
+  padding: 0;
+}
+.sidebar-home .item-sidebar {
+  display: flex;
+  align-items: center;
+}
+.sidebar-home .item-sidebar .image {
+  padding: 0;
+}
+.sidebar-home .item-sidebar .image img {
+  width: 50px;
+  margin: auto;
+  height: 60%;
+}
+.sidebar-home .item-sidebar .content {
+  padding: 0 10px;
+}
+.sidebar-home .item-sidebar .content .date {
+  font-size: 12px;
+  color: #696969;
+  margin-bottom: 7px;
+}
+.sidebar-home .item-sidebar .content .title {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: var(--transition-1);
+}
+.sidebar-home .item-sidebar .content .meta-wrapper {
+  margin: 0;
+}
+.sidebar-home .item-sidebar .content .meta-wrapper .date-time time {
+  font-size: 12px;
+}
+
 #error {
   padding-top: 100px;
   padding-bottom: 50px;

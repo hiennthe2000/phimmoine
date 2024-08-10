@@ -3,7 +3,7 @@
     <div class="container">
         <a href="<?= home_url(); ?>" class="logo">
             <?php $logo_web = get_field('logo_web', 'option'); ?>
-            <img class="logo-main" src="<?= $logo_web['url'] ?>" alt="Filmlane logo">
+            <img class="logo-main" src="<?= $logo_web['url'] ?>" alt="Xem phim online">
             <p class="hero-subtitle"><?php the_field('name_website', 'option') ?></p>
         </a>
         <div class="header-actions">
@@ -17,12 +17,12 @@
             </div>
         </div>
         <button class="menu-open-btn">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/bars.svg" alt="Filmlane logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/bars.svg" alt="Xem phim miễn phí">
         </button>
         <nav class="navbar">
             <div class="navbar-top">
                 <a href="./index.html" class="logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Filmlane logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Xem phim online">
                 </a>
                 <button class="menu-close-btn" data-menu-close-btn>
                     <ion-icon name="close-outline"></ion-icon>
@@ -33,7 +33,7 @@
         <div class="menu-mobile">
             <div class="close">
                 <button class="bt-close">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/cross.svg" alt="Filmlane logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/cross.svg" alt="Xem phim miễn phí">
                 </button>
             </div>
             <div class="header-actions">
