@@ -251,6 +251,20 @@ body.active {
     font-size: var(--fs-9);
     font-weight: var(--fw-500);
     transition: var(--transition-1);
+    cursor: pointer;
+}
+.ganre-wrapper>a>span {
+    display: none;
+}
+.ganre-wrapper>a.active {
+    color: var(--citrine);
+}
+
+.ganre-wrapper {
+    color: var(--gainsboro);
+    font-size: var(--fs-9);
+    font-weight: var(--fw-500);
+    transition: var(--transition-1);
 }
 
 .ganre-wrapper>a:is(:hover, :focus) {

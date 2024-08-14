@@ -19,10 +19,25 @@ get_template_part('sections/menu-main');
                                     alt="">
                             </div>
                             <?php
-                  $link_movie = get_post_meta(get_the_ID(), 'link_movie', true);
-               echo $link_movie; ?>
-                        </figure>
+                            $link_movie_repeater = get_field('link_movie_single');
 
+                            if ($link_movie_repeater && is_array($link_movie_repeater) && !empty($link_movie_repeater)) {
+                                $first_item = $link_movie_repeater[0];
+
+                                if (isset($first_item['link'])) {
+                                    ?>
+                            <iframe id="item-fame" src="<?php echo $first_item['link']; ?>" width="640" height="360"
+                                frameborder="0" allowfullscreen>
+                            </iframe>
+                            <?php
+                                } else{
+                                    ?>
+                            <h3>Không có video !</h3>
+                            <?php
+                                }
+                            } 
+                            ?>
+                        </figure>
                         <div class="movie-detail-content col-12">
 
                             <p class="detail-subtitle">
@@ -45,53 +60,37 @@ get_template_part('sections/menu-main');
                                         </time>
                                     </div>
                                 </div>
-                                <?php
-                    $current_post_id = get_the_ID();
-                    $post_tags = wp_get_post_tags($current_post_id);
-                    if ($post_tags) {
-                      $tag_ids = array();
-                      foreach ($post_tags as $tag) {
-                        $tag_ids[] = $tag->term_id;
-                      }
-                      $related_posts_query = new WP_Query(
-                        array(
-                          'tag__in' => $tag_ids,
-                          'post__not_in' => array($current_post_id),
-                          'posts_per_page' => -1,
-                          'orderby' => 'date',
-                          'order' => 'ASC'
-                        )
-                      );
-                      if ($related_posts_query->have_posts()) {
-                        ?>
                                 <div class="ganre-wrapper">
                                     <?php
-                          $i = 1;
-                          while ($related_posts_query->have_posts()) {
-                            $related_posts_query->the_post();
-                            ?>
-                                    <a href="<?php echo get_permalink() ?>">Tập <?= $i ?></a>
+                                        $link_movie_repeater = get_field('link_movie_single');
+
+                                        if ($link_movie_repeater) {
+                                            $total_items = count($link_movie_repeater);
+                                            if($total_items > 1){
+                                                $i = 1;
+                                                foreach ($link_movie_repeater as $item) {
+                                                    // Kiểm tra và hiển thị giá trị của trường 'link'
+                                                    if (isset($item['link'])) {
+                                                        ?>
+                                    <a>Tập <?= $i ?><span><?php echo esc_html($item['link']) ?></span></a>
                                     <?php
-                            $i++;
-                          }
-                          ?>
+                                                    }
+                                                    $i++;
+                                                }
+                                            }
+                                            }
+                                        ?>
                                 </div>
-                                <?php
-                        wp_reset_postdata();
-                      }
-                    }
-                    ?>
-                            </div>
-                            <div class="story-content">
-                                <div class="storyline">
-                                    <?php the_content(); ?>
+                                <div class="story-content">
+                                    <div class="storyline">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <button id="single-button"><span>Xem thêm</span><img
+                                            src="<?php echo get_template_directory_uri() ?>/images/chevron-double-down.svg"
+                                            alt=""></button>
                                 </div>
-                                <button id="single-button"><span>Xem thêm</span><img
-                                        src="<?php echo get_template_directory_uri() ?>/images/chevron-double-down.svg"
-                                        alt=""></button>
                             </div>
                         </div>
-                    </div>
                 </section>
             </article>
             <article class="sidebar-home col-md-4">
