@@ -86,32 +86,3 @@ document.addEventListener("DOMContentLoaded", function() {
 <?php
 }
 add_action('wp_footer', 'add_lazy_loading_to_iframes');
-
-// Đổi tên phim bộ
-function custom_post_tag_labels() {
-    global $wp_taxonomies;
-
-    if (isset($wp_taxonomies['post_tag'])) {
-        $labels = &$wp_taxonomies['post_tag']->labels;
-        $labels->name = 'Tên bộ phim';
-        $labels->singular_name = 'Tên bộ phim';
-        $labels->search_items = 'Tìm kiếm Tên bộ phim';
-        $labels->all_items = 'Tất cả Tên bộ phim';
-        $labels->parent_item = null;
-        $labels->parent_item_colon = null;
-        $labels->edit_item = 'Chỉnh sửa Tên bộ phim';
-        $labels->view_item = 'Xem Tên bộ phim';
-        $labels->update_item = 'Cập nhật Tên bộ phim';
-        $labels->add_new_item = 'Thêm Tên bộ phim mới';
-        $labels->new_item_name = 'Tên Tên bộ phim mới';
-        $labels->popular_items = 'Tên bộ phim phổ biến';
-        $labels->separate_items_with_commas = 'Phân cách các Tên bộ phim bằng dấu phẩy';
-        $labels->add_or_remove_items = 'Thêm hoặc xóa Tên bộ phim';
-        $labels->choose_from_most_used = 'Chọn từ những Tên bộ phim được sử dụng nhiều nhất';
-        $labels->not_found = 'Không tìm thấy Tên bộ phim nào';
-        $labels->no_terms = 'Không có Tên bộ phim';
-        $labels->items_list_navigation = 'Danh sách Tên bộ phim';
-        $labels->items_list = 'Danh sách các Tên bộ phim';
-    }
-}
-add_action('init', 'custom_post_tag_labels');

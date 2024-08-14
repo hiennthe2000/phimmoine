@@ -15,22 +15,25 @@
 </div>
 <ul class="has-scrollbar movies-list-new row">
     <?php
-                 
-                 
                         while ($query->have_posts()):
                             $query->the_post();
                             ?>
     <li class="col-md-3 col-sm-4 col-6 mt-4">
         <div class="movie-card">
-            <?php $episode = get_post_meta(get_the_ID(), 'episode', true); ?>
-            <?php if($episode){
-                                    ?>
+            <?php
+            $link_movie_repeater = get_field('link_movie_single');
+
+            if ($link_movie_repeater) {
+                $total_items = count($link_movie_repeater);
+                if($total_items > 1){
+                ?>
             <div class="item-movie">
-                <?= $episode ?>
+                Tập <?php echo $total_items .' / '. $total_items ?>
             </div>
             <?php
-                                }
-                                ?>
+                  }                         
+                    }
+                ?>
             <a href="<?php the_permalink() ?>">
                 <figure class="card-banner">
                     <?php

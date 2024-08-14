@@ -4,7 +4,7 @@
                     ?>
 <div class="flex-wrapper">
     <div class="title-wrapper">
-        <h2 class="h2 section-title">PHIM ĐỀ CỬ</h2>
+        <h2 class="h2 section-title">PHIM LẺ</h2>
     </div>
 </div>
 <div class="bg-movie">
@@ -22,14 +22,7 @@
 
         <li>
             <div class="movie-card">
-                <?php if($episode){
-                                ?>
-                <div class="item-movie">
-                    <?= $episode ?>
-                </div>
-                <?php
-                                }
-                                 ?>
+
                 <a href="<?php echo $post_movie_link ?>">
                     <figure class="card-banner">
                         <img src="<?php echo get_the_post_thumbnail_url($post_movie); ?>" alt="Phim mới online">

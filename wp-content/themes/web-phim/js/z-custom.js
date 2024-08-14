@@ -123,4 +123,20 @@ $(document).ready(function () {
             }
         });
     }
+
+
+    //active phim bộ
+    // Bắt sự kiện click cho tất cả các thẻ a
+    $('.ganre-wrapper a').on('click', function (e) {
+        e.preventDefault(); // Ngăn không cho thẻ a chuyển hướng
+
+        var spanText = $(this).find('span').text(); // Lấy text của span con
+        var iframeSrc = spanText; // Tạo src cho iframe
+
+        $('.movie-detail-banner #item-fame').attr('src', iframeSrc); // Cập nhật src của iframe
+
+        // Đánh dấu thẻ a được chọn
+        $('.ganre-wrapper a').removeClass('active'); // Xóa đánh dấu khỏi tất cả thẻ a
+        $(this).addClass('active'); // Thêm đánh dấu cho thẻ a được click
+    });
 });
