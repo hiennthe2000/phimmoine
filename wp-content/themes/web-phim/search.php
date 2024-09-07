@@ -25,7 +25,8 @@ get_template_part('sections/menu-main');
                     <?php
 $s = get_search_query();
 $args = array(
-    's' => $s
+    's' => $s,
+    'post_type' => 'post'
 );
 $query = new WP_Query($args);
 
