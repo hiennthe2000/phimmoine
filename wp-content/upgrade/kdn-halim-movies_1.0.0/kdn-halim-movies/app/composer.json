@@ -1,0 +1,12 @@
+{
+	"name": "kdn-halim-movies",
+	"description": "None",
+	"autoload": {
+		"psr-4": {
+			"KDN_HalimMovies\\": [""]
+		},
+		"files": [
+			"helpers/translation.php"
+		]
+	}
+}

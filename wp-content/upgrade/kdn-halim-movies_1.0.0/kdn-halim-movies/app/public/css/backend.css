@@ -1,0 +1,55 @@
+body {
+    background-color: #f1f1f1;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+.kdn_halim_options table tr td {
+    vertical-align: top
+}
+
+.kdn_halim_options .item-row {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.kdn_halim_options .item-row .option-value {
+	display: inline;
+}
+
+.kdn_halim_options .item-row .delete-option {
+	float: right;
+	margin-left: 5px;
+	line-height: 20px;
+}
+
+.kdn_halim_options .child-item {
+	padding-left: 75px;
+	position: relative;
+    margin: 2px 0px;
+}
+
+.kdn_halim_options .child-item .delete-item {
+    position: absolute;
+    right: -18px;
+    top: 7px;
+    background: #FFC107;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 0px;
+    color: white;
+    border-radius: 100px;
+    line-height: 12px;
+    cursor: pointer;
+}
+
+.tooltip .arrow {
+    margin-left: auto!important;
+}
+
+.kdn_halim_options input[type="text"] {
+    height: 29px;
+}

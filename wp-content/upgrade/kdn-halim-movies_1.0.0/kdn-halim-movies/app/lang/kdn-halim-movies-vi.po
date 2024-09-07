@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KDN Halim Movies\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-23 10:01+0000\n"
+"PO-Revision-Date: 2019-07-23 10:01+0000\n"
+"Last-Translator: admin <kdnautoleech@gmail.com>\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#. Name of the plugin
+msgid "KDN Halim Movies"
+msgstr "KDN Halim Movies"
+
+#. Description of the plugin
+msgid ""
+"<strong>Simplify saving information to each movie for the Halim Movies theme "
+"- <code>https://halimthemes.com</code></strong>"
+msgstr ""
+"<strong>Đơn giản hóa việc lưu thông tin vào mỗi phim cho giao diện Halim "
+"Movies - <code>https://halimthemes.com</code></strong>"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://kdnautoleech.com"
+msgstr "https://kdnautoleech.com"
+
+#. Author of the plugin
+msgid "KDN Auto Leech"
+msgstr "KDN Auto Leech"
+
+msgid "Add new"
+msgstr "Thêm mới"
+
+msgid "String"
+msgstr "Chuỗi"
+
+msgid "Array"
+msgstr "Mảng"
+
+msgid ""
+"Set Post meta for posts with data taken from Post meta configured in the "
+"campaign.<br/><br/><b style=\"color:blue\">* Post meta key:</b> Post meta "
+"key will be assigned data.<br/><br/><b style=\"color:blue\">* Target post "
+"meta key:</b> Post meta key configured in the campaign."
+msgstr ""
+"Thiết lập lưu Post meta cho bài viết với dữ liệu lấy từ Post meta được cấu "
+"hình trong chiến dịch.<br/><br/><b style=\"color:blue\">* Post meta key:</b> "
+"Post meta key sẽ được gán dữ liệu.<br/><br/><b style=\"color:blue\">* Target "
+"post meta key:</b> Post meta key được cấu hình trong chiến dịch."
+
+msgid "Post meta settings:"
+msgstr "Thiết lập Post meta:"
+
+msgid "Sites allowed:"
+msgstr "Chiến dịch cho phép:"
